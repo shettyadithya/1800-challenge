@@ -37,25 +37,6 @@ $(document).ready(function() {
         }
       } else {
         $('#results').html(`1800 - ${checkDict} `);
-
-        // $('#results').html(
-        //   ` 1800 - ${checkDict
-        //     .join('')
-        //     .match(/.{1,3}/g)
-        //     .join('-')}`
-        // );
-        // let consec_num = /\d{2}/;
-        // let newz = narray.join('');
-        // if (!consec_num.test(newz)) {
-        //   $('#results').html(
-        //     `1800-  ${narray
-        //       .join('')
-        //       .match(/.{1,3}/g)
-        //       .join('-')}
-        //        <br />`
-        //   );
-        // }
-        // alert('consecutive numericals are not allowed!s');
       }
     } else {
       alert('enter valid iinput');
