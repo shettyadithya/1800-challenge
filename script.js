@@ -22,7 +22,7 @@ $(document).ready(function() {
       let marray = Replace.second;
       let res = $.fn.myFunction();
       let dictAr = [].concat(...marray);
-      let checkDict = valid(dictAr, res);
+      var checkDict = valid(dictAr, res);
       if (checkDict.length == 0) {
         let consec_num = /\d{2}/;
         let newz = narray.join('');
@@ -45,9 +45,14 @@ $(document).ready(function() {
   $('#dict_btn').click(
     ($.fn.myFunction = function() {
       let dict_val = $('#dictionary_Val').val();
-      var dictz = [];
-      dictz.push(dict_val.toUpperCase());
-      return dictz;
+      let dictRegex = /^[a-zA-Z]*/g;
+      if (!dictRegex.test(dict_val)) {
+        var dictz = [];
+        dictz.push(dict_val.toUpperCase());
+        return dictz;
+      } else {
+        alert('invalid input');
+      }
     })
   );
 });
@@ -70,7 +75,7 @@ function replaceNum(test, dictObj) {
         drray.push(dictObj[key]);
       }
     }
-  }                    
+  }
   return { first: charAr, second: drray };
 }
 // checking with dictionary
